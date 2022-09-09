@@ -18,17 +18,20 @@ for i in direcciones:
     page = requests.get(i)
     soup = BeautifulSoup(page.text, 'lxml')
 
-    #obteniendo la tabla
+    #apuntando a la tabla en el codigo html
     table = soup.find('table', {
         'class': 'slds-table slds-table--striped slds-no-row-hover rio-guild-details-table slds-max-small-table'})
+    #creando los encabezados del dataframe
     headers = [i.replace(server,""),'Reforzado','Tyranico',"Rating","Best Time","Best Affixes","World","Region"]
     df = pd.DataFrame(columns = headers)
 
+    #obteniendo datos en cada td de cada tr
     for row in table.find_all('tr')[1:]:
         data = row.find_all('td')
         row_data = [td.text.strip() for td in data]
         length = len(df)
         df.loc[length] = row_data
+    #dropeando las columnas que no necesito
     df = df.drop(columns=["Rating", "Best Time", "Best Affixes", "World", "Region"])
 
     #reemplazando letras malas y +
