@@ -6,7 +6,7 @@ import numpy as npi
 nick='Sinpossio'
 url = 'https://raider.io/characters/us/ragnaros/'
 urlnick = url + nick
-dungeonbad= ['TOP','PF','MISTS','DOS','NW','HOA','GMBT','SD','STRT','SOA']
+dungeonbad= ['YARD','UPPR','ID','LOWR','GD','WORK','GMBT','SD','STRT','SOA']
 page = requests.get(urlnick)
 soup = BeautifulSoup(page.text, 'lxml')
 
@@ -27,7 +27,7 @@ df['Reforzado'] = df['Reforzado'].str.replace('+', '', regex=True)
 df['Tyranico'] = df['Tyranico'].str.replace('+', '', regex=True)
 
 # para seleccionar los menos a 20
-select_prod1 = df.loc[(df['Tyranico']  < '20')|(df['Reforzado']  < '20')]
+#select_prod1 = df.loc[(df['Tyranico']  < '20')|(df['Reforzado']  < '20')]
 #select_prod1 = df.loc[(df['Tyranico']  < '20')]
 
 
@@ -37,7 +37,7 @@ print(df)
 #union de los dataframes
 #final_df =  pd.merge(select_prod1,select_prod2, how= "outer")
 
-print(select_prod1)
+#print(select_prod1)
 
 
 

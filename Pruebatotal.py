@@ -3,9 +3,9 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd
 import numpy as np
-Personajes = ['Arstanselmy','Engenieer','Leut','Nnonno','Sinpossio','Thúnderbolt','Valkyrion','Walle']
+Personajes = ['Arstanselmy','Engenieer','Leut','Nnonno','Sinpossio','Thúnderbolt','Valkyrion','Walle','Sendarick','Yyevuj','Redemers']
 server = 'https://raider.io/characters/us/ragnaros/'
-dungeonbad= ['TOP','PF','MISTS','DOS','NW','HOA','GMBT','SD','STRT','SOA']
+dungeonbad= ['YARD','UPPR','ID','LOWR','GD','WORK','GMBT','SD','STRT','SOA']
 
 
 direcciones = list()
@@ -45,8 +45,8 @@ for i in direcciones:
     #select_prod2 = df.loc[df['Reforzado'] < '20']
     #final_df = pd.merge(select_prod1, select_prod2, how="outer")
     #select_prod1 = df.loc[(df['Tyranico'] < '20') | (df['Reforzado'] < '20')]
-    select_prod1 = df.loc[(df['Reforzado'] < '20')]
-    print(select_prod1)
+    #select_prod1 = df.loc[(df['Reforzado'] < '20')]
+    print(df)
 
 
 
